@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+@media (min-width: 992px) {
+    .card {
+        max-width: 41.6666666667% !important;
+    }
+}
+
+body {
+    font-family: "Poppins",sans-serif;
+    margin: 0;
+    font-size: .8125rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    text-align: left;
+    background-color: #f8f8fb;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.card {
+    border: 0 solid #f6f6f6;
+    box-shadow: 0 0.75rem 1.5rem rgba(18,38,63,.03);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+.bg-soft-primary {
+    background-color: rgba(85,110,230,.25)!important;
+    border-radius: .25rem;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    color: #556ee6!important;
+}
+
+.row p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: .8125rem;
+}
+
+.row h5 {
+    font-size: 1.01563rem !important;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: inherit;
+}
+
+.card .card-footer .form-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.card .card-body .avatar-md {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 72px;
+    height: 72px;
+    margin-top: -50px;
+}
+
+.card .card-body .form-group:last-child button a {
+    color: white;
+    text-decoration: none;
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #b1bbc4;
+    outline: 0;
+    box-shadow: none;
+}
+
+.form-control  {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .94rem + 2px);
+    padding: .47rem .75rem;
+    font-size: .8125rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out
+}
+
+.Signup a {
+    color: #556ee6;
+}
+
+.reset-password a {
+    color: #74788dcf!important;
+}
+
+.reset-password a:hover {
+    color: #74788d!important;
+}
+
+.reset-password img {
+    margin-right: .5rem!important;
+    margin-bottom: 4px;
+    width: 13px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #556ee6;
+    border-color: #556ee6;
+    font-size: .8125rem;
+}
+
+.text-muted {
+    color: #f46a6a !important;
+}
+
+.invalid-border {
+    border-color: #f46a6a !important;
+}
