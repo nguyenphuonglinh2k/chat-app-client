@@ -1,0 +1,108 @@
+.logo {
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 70px;
+}
+
+.logo .logo-name img {
+    height: 27px !important;
+    margin-right: 5px;
+    padding-bottom: 2px;
+}
+
+.logo img:last-child {
+    height: 16px;
+    cursor: pointer;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100%;
+    background-color: #2a3042;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+.sidebar .vertical-menu {
+    overflow: auto;
+    height: calc(100% - 100px);
+}
+
+.sidebar:hover .vertical-menu::-webkit-scrollbar-thumb {
+    display: inline;
+}
+
+.sidebar .vertical-menu::-webkit-scrollbar {
+    width: 6px;
+}
+  
+.sidebar .vertical-menu::-webkit-scrollbar-thumb {
+    display: none;
+    background: #74788d;
+    border-radius: 10px;
+}
+
+.sidebar .vertical-menu ul {
+    padding: 0;
+}
+
+.logo-name {
+    font-size: 20px;
+    color: white;
+    letter-spacing: 2.5px;
+    font-weight: 600;
+}
+
+.sidebar .vertical-menu ul li {
+    list-style-type: none;
+    padding: 12px 22px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.sidebar .vertical-menu .channel-item {
+    padding: 8px 8px 8px 32px !important;
+}
+
+.sidebar .vertical-menu ul li img {
+    height: 22px;
+    width: 22px;
+    margin-right: 8px;
+    padding-bottom: 2.5px;
+}
+
+.add-channel-btn {
+    height: 18px !important;
+    margin-right: 0 !important;
+}
+
+.sidebar .vertical-menu ul li span {
+    color: #a6b0cf;
+    transition: all .4s;
+}
+
+.sidebar .vertical-menu ul li:hover span {
+    color: white;
+}
+
+.sidebar .vertical-menu ul li .menu-title {
+    color: #6a7187 !important;
+    letter-spacing: .05em;
+    pointer-events: none;
+    cursor: default;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.sidebar .vertical-menu .channels {
+    border-top: 1px solid #a6b0cf1f;
+}
+
+.color-focus {
+    background-color: #a6b0cf1f;
+}
+
