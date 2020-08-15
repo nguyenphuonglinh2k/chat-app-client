@@ -1,0 +1,40 @@
+.main-content .page-content {
+    padding: 24px 24px;
+    height: calc(100% - 150px);
+    box-sizing: content-box;
+}
+
+.main-content .page-content h4 {
+    font-weight: 600;
+    font-size: 16px!important;
+    color: #495057;
+    padding-bottom: 24px;
+    margin: 0;
+}
+
+.main-content .page-content .message-content {
+    margin-left: 10px;
+}
+
+.main-content .page-content .message-content .text-top span:first-child {
+    font-size: 15px!important;
+    color: #495057;
+    padding-right: 10px;
+    font-weight: 600;
+    letter-spacing: .25px;
+}
+
+.main-content .page-content .message-content .text-top span:last-child {
+    color: #9194a0;
+    padding-top: 1.5px;
+    font-style: italic;
+}
+
+.main-content .page-content .card-body {
+    box-shadow: 0 0.75rem 1.5rem rgba(18,38,63,.01);
+    border-radius: .25rem;
+}
+ 
+.non-message img {
+    width: calc(100% - 40%);
+}
