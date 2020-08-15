@@ -1,0 +1,90 @@
+@media (min-width: 639px) {
+    /* main-content */
+    .main-content {
+        padding-left: 250px;
+    }
+} 
+
+@media (max-width: 575.98px) {
+    .main-content .page-content .message-card .text-top {
+        flex-direction: column;
+    }
+}
+
+.visible {
+    display: none;
+}
+
+.padding-none {
+    padding-left: 0 !important;
+}
+
+.Chat {
+    width: 100vw;
+    height: 100vh;
+}
+
+/* main-content */
+.main-content {
+    transition: all .5s ease;
+    background-color: #f8f8fb;
+}
+
+.main-content .page-topbar {
+    padding: 12px 24px;
+    background-color: white;
+}
+
+.main-content .page-topbar .menu-btn {
+    cursor: pointer;
+}
+
+.main-content .page-topbar .menu-btn img {
+    width: 20px;
+}
+
+.main-content .header-profile img {
+    height: 36px;
+    cursor: pointer;
+}
+
+.main-content .page-content .messages-box {
+    flex-grow: 1;
+    max-height: 770px;
+    overflow: auto;
+}
+  
+.main-content .page-content .messages-box::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+   
+
+.main-content .page-content .messages-box::-webkit-scrollbar {
+    width: 8px;
+}
+  
+.main-content .page-content .messages-box::-webkit-scrollbar-thumb {
+    background: #2a304273;
+    border-radius: 5px;
+}
+
+.main-content .page-content .message-input input {
+    border-radius: 30px;
+    background-color: white;
+    border-color: rgba(85,110,230,.1)!important;
+    padding: 20px !important;
+}
+
+.main-content .page-content .message-input input:focus {
+    background-color: rgb(232, 240, 254);
+}
+
+.main-content .page-content .message-input button {
+    border-radius: 30px;
+}
+
+.dropdown button {
+    padding: 0;
+    border-radius: 50%;
+    width: 39px;
+}
