@@ -1,0 +1,22 @@
+.emoij-btn {
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+    top: 21%;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+aside.emoji-picker-react {
+    position: absolute;
+    top: -340px;
+    right: 0px;
+}
+
+.main-content .page-content .message-input input {
+    padding: 5px 20px !important;
+}
+
+.skin-tones-list {
+    display: none !important;
+}
