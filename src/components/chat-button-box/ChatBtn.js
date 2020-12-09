@@ -4,7 +4,6 @@ import socketIOClient from "socket.io-client";
 import Picker from "emoji-picker-react";
 
 import './ChatBtn.css';
-import { message } from 'antd';
 
 function ChatBtn(props) {
     const { setMessages, messages } = props;

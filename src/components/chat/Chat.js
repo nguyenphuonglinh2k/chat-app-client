@@ -11,7 +11,6 @@ import ChatBtn from '../chat-button-box/ChatBtn';
 import Toast from '../Toast';
 
 import './Chat.css';
-import { message } from 'antd';
 
 function Chat() {
     const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -53,7 +52,7 @@ function Chat() {
             })
             .catch((err) => console.log(err));
         
-    }, [channelIdCurrent])
+    }, [channelIdCurrent, history])
 
     return (
         <div className="Chat">
