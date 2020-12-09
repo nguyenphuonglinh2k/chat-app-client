@@ -13,7 +13,7 @@ function App(props) {
     const { sidebarOpen, setSidebarOpen, setMessages } = props;
     const [channels, setChannels] = useState([]);
 
-    let currentChannelId = localStorage.getItem('channelId');
+    let currentChannelId = localStorage.getItem('channelId') || "5f325c4598326349ea89ef84";
     let history = useHistory();
     
     useEffect(() => {

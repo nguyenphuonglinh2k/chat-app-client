@@ -11,13 +11,14 @@ import ChatBtn from '../chat-button-box/ChatBtn';
 import Toast from '../Toast';
 
 import './Chat.css';
+import { message } from 'antd';
 
 function Chat() {
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [sidebarOpen, setSidebarOpen] = useState(true);
     const [messages, setMessages] = useState([]);
     const toggle = () => setDropdownOpen(prevState => !prevState);
-    const socket = socketIOClient('http://localhost:5000/');
+    const socket = socketIOClient('http://localhost:5000');
 
     let channelIdCurrent = localStorage.getItem('channelId') || '5f325c4598326349ea89ef84';
     let history = useHistory();
@@ -52,7 +53,7 @@ function Chat() {
             })
             .catch((err) => console.log(err));
         
-    }, [channelIdCurrent, history])
+    }, [channelIdCurrent])
 
     return (
         <div className="Chat">
@@ -79,7 +80,7 @@ function Chat() {
                         </DropdownToggle>
                         <DropdownMenu right className="mt-2">
                             <DropdownItem>Profile</DropdownItem>
-                            <DropdownItem onCLick={onClickLogOut}>Log out</DropdownItem>
+                            <DropdownItem onClick={onClickLogOut}>Log out</DropdownItem>
                         </DropdownMenu>
                     </Dropdown>
                 </div>
@@ -93,7 +94,7 @@ function Chat() {
                             <MessageCard messages={messages} />
                         </div>
                         <div className="w-100">
-                            <ChatBtn />
+                            <ChatBtn setMessages={setMessages} messages={messages}/>
                         </div>
                     </div>
                 </div>

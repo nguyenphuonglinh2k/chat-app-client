@@ -4,8 +4,11 @@ import socketIOClient from "socket.io-client";
 import Picker from "emoji-picker-react";
 
 import './ChatBtn.css';
+import { message } from 'antd';
 
-function ChatBtn() {
+function ChatBtn(props) {
+    const { setMessages, messages } = props;
+
     const [messageInput, setMessageInput] = useState('');
     const socket = socketIOClient('http://localhost:5000/');
     const channelId = localStorage.getItem('channelId');
@@ -22,12 +25,16 @@ function ChatBtn() {
         const [month, date, year] = today.toLocaleDateString().split("/");
         const present = `${time}, ${date}-${month}-${year}`;
 
-        socket.emit("send-message", {
-            mess: messageInput,
+        const newMessage = {
+            content: messageInput,
             time: present,
             channelId,
-            user
-        });
+            user: JSON.parse(user)
+        };
+
+        socket.emit("send-message", newMessage);
+
+        setMessages(() => [...messages, newMessage]);
 
         setMessageInput(() => '');
     }

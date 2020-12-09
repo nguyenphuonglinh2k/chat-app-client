@@ -23,7 +23,7 @@ function SignUp() {
             email,
             password
         }).then((res) => {
-            setInvalidValue(() => res.data);
+            setInvalidValue(() => res.data);        
 
             if (res.data.message) {
                 Toast.fire({
@@ -120,10 +120,17 @@ function SignUp() {
                         }
                     </FormGroup>
                     <div className="mt-4">
-                        <button onClick={onClickPostSignUp} className="btn btn-primary btn-block waves-effect waves-light" type="button">Register</button>
+                        <button 
+                            onClick={onClickPostSignUp} 
+                            className="btn btn-primary btn-block waves-effect waves-light" 
+                            type="button">
+                                Register
+                        </button>
                     </div>
                     <div className="mt-4 text-center">
-                        <p>Already have an account? <a className="font-weight-medium" href="/signin"> Login</a> </p>
+                        <p>Already have an account? 
+                            <a className="font-weight-medium" href="/signin"> Login</a> 
+                        </p>
                     </div>
                 </Form>
             </div>

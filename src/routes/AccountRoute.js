@@ -15,24 +15,24 @@ import {
 function AccountRoute() {
   return (
     <Router>
-        <Route path="/" exact>
-          <Redirect to="/chat" />
-        </Route>
-        <Route path="/signup" exact>
-          <SignUp />
-        </Route>
-        <Route path="/signin" exact>
-          <SignIn />
-        </Route>
-        <Route path="/forgot-password" exact>
-          <ForgotPassword />
-        </Route>
-        <Route path="/reset-password/:userId" exact>
-          <ResetPassword />
-        </Route>
-        <Route path="/chat" exact>
-          <Chat />
-        </Route>
+      <Route path="/" exact>
+        <Redirect to="/chat" />
+      </Route>
+      <Route path="/signup" exact>
+        <SignUp />
+      </Route>
+      <Route path="/signin" exact>
+        <SignIn />
+      </Route>
+      <Route path="/forgot-password" exact>
+        <ForgotPassword />
+      </Route>
+      <Route path="/reset-password/:userId" exact>
+        <ResetPassword />
+      </Route>
+      <Route path="/chat" exact>
+        <Chat />
+      </Route>
     </Router>
   );
 }

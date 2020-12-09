@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import {
     useParams,
     useHistory
-  } from "react-router-dom";
+} from "react-router-dom";
 
 import { Container, Form, Label, Input, FormGroup, FormText } from 'reactstrap';
 

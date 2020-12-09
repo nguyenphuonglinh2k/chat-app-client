@@ -1,6 +1,8 @@
 {
   "name": "client",
   "version": "0.1.0",
+  "main": "src/electron-starter.js",
+  "homepage": "./",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -11,6 +13,7 @@
     "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
     "classnames": "^2.2.6",
+    "electron-packager": "^15.1.0",
     "emoji-picker-react": "^3.2.1",
     "react": "^16.13.1",
     "react-burger-menu": "^2.7.1",
@@ -22,7 +25,7 @@
     "socket.io-client": "^2.3.0",
     "sweetalert2": "^9.17.1"
   },
-  "proxy": "http://localhost:5000",
+  "proxy": "http://localhost:5000/",
   "husky": {
     "hooks": {
       "pre-commit": "eslint --ignore-path .gitignore . --fix"
@@ -30,6 +33,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "electron": "react-scripts build && electron .",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -50,6 +54,7 @@
     ]
   },
   "devDependencies": {
+    "electron": "^11.0.3",
     "husky": "^4.2.5"
   }
 }
