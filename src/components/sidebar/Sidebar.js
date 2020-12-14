@@ -9,7 +9,7 @@ import Toast from '../Toast';
 import 'antd/dist/antd.css';
 import './Sidebar.css';
 
-function App(props) {
+function Sidebar(props) {
     const { sidebarOpen, setSidebarOpen, setMessages } = props;
     const [channels, setChannels] = useState([]);
 
@@ -85,7 +85,7 @@ function App(props) {
                 <ul className="channels">
                     <li className="d-flex justify-content-between">
                         <span className="menu-title">CHANNELS</span> 
-                        <AddChannelBtn setChannels={setChannels} />
+                        <AddChannelBtn channels={channels} setChannels={setChannels} />
                     </li>
                     { channels.length &&                
                         channels.map((channel, index) => 
@@ -104,4 +104,4 @@ function App(props) {
     );
 }
 
-export default App;
+export default Sidebar;

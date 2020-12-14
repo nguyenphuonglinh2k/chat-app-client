@@ -6,7 +6,7 @@ import axios from 'axios';
 import Toast from './Toast';
 
 function AddChannelBtn(props) {
-    const { setChannels } = props;
+    const { setChannels, channels } = props;
     const [channelName, setChannelName] = useState('');
     const [visible, setVisible] = useState(false);
 
@@ -21,8 +21,8 @@ function AddChannelBtn(props) {
                     icon: 'error',
                     title: res.data.error
                 });
-            
-            setChannels(() => res.data.newChannel);
+
+            setChannels(() => [...channels, res.data.newChannel]);
             setChannelName(() => '');
             
             return Toast.fire({
