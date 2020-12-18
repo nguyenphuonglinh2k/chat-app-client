@@ -50,7 +50,7 @@ function Chat() {
             })
             .catch((err) => console.log(err));
         
-    }, [channelIdCurrent])
+    }, [channelIdCurrent, history])
 
     return (
         <div className="Chat">
