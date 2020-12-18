@@ -1,0 +1,83 @@
+.Profile {
+    width: 350px;
+    height: 100%;
+    background-color: #f8f8fb;
+    position: absolute;
+    top: 62px;
+    right: 0;
+    z-index: 1;
+    border-left: 1px solid #00000010;
+}
+
+.profile-pad {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.profile-header {
+    border-bottom: 1px solid #00000010;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.profile-header .close-btn {
+    height: 20px;
+    width: 20px;
+    padding: 5px;
+    transition: all .2s;
+    cursor: pointer;
+}
+
+.profile-header .close-btn:hover {
+    background-color: #ddd;
+}
+
+.profile-header div:first-child {
+    font-weight: 600;
+    font-size: 16px;
+    color: #495057;
+}
+
+.avatarURL img {
+    border-radius: 5%;
+    height: 170px;
+    width: 170px;
+    margin-bottom: 20px;
+}
+
+/* profile-content */
+.profile-content {
+    padding: 20px 15px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.profile-content span {
+    color: rgba(var(--sk_foreground_max,29,28,29),.7);
+    font-weight: 700;
+    line-height: 1.38463;
+}
+
+/* edit-btn */
+.edit-btn {
+    text-align: center;
+}
+
+.edit-btn button {
+    padding: 5px 30px;
+    border-radius: 3px;
+    font-size: 16px;
+    background-color: #f46a6a;
+    border: none;
+    outline: none;
+    color: white;
+    transition: all .2s;
+}
+
+.edit-btn button:hover {
+    background-color: #f83333;
+}
+
+/* #upload-avt {
+    display: none;
+} */

@@ -18,6 +18,11 @@ function ResetPassword() {
     let { userId } = useParams();
     let history = useHistory();
 
+    function onKeyUp(e) {
+        if (e.charCode === 13)
+            onClickPostResetPassword()
+    }
+
     function onClickPostResetPassword() {
         axios.post(`http://localhost:5000/account/reset-password/${userId}`, {
             password
@@ -62,7 +67,7 @@ function ResetPassword() {
                         height="34" 
                     />
                 </div>
-                <Form>
+                <Form onKeyPress={onKeyUp}>
                     <FormGroup>
                         <Label for="examplePassword">New Password</Label>
                         <Input 

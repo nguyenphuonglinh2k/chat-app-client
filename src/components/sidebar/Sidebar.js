@@ -51,7 +51,7 @@ function Sidebar(props) {
     }
 
     return (
-        <div className={ classNames('sidebar', {"visible": !sidebarOpen}) }>
+        <div className={ classNames('sidebar', {"nonVisible": !sidebarOpen}) }>
             <div className="logo d-flex justify-content-between">
                 <div className="logo-name">
                     <img  src="https://cdn.glitch.com/af45ea57-cc17-431c-a29e-191393077cfe%2Flogo.4dbbacd2.svg?v=1597420315594" alt="" />

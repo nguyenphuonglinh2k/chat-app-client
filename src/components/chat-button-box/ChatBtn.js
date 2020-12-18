@@ -18,7 +18,12 @@ function ChatBtn(props) {
         setMessageInput((messageInput) => messageInput + emojiObject.emoji);
     };
 
-    function onClickPostMessages() {
+    function onKeyUp(e) {
+        if (e.charCode === 13) 
+            onClickPostMessages();
+    }
+
+    function onClickPostMessages(e) {
         const today = new Date();
         const time = today.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
         const [month, date, year] = today.toLocaleDateString().split("/");
@@ -28,9 +33,10 @@ function ChatBtn(props) {
             content: messageInput,
             time: present,
             channelId,
-            user: JSON.parse(user)
+            user: JSON.parse(user)._id
         };
 
+        console.log(newMessage)
         socket.emit("send-message", newMessage);
 
         setMessages(() => [...messages, newMessage]);
@@ -40,7 +46,10 @@ function ChatBtn(props) {
 
     return (
         <div className="message-input d-flex">
-            <Form className="w-100 position-relative">
+            <Form 
+                className="w-100 position-relative"
+                onKeyPress={onKeyUp}
+            >
                 <Input id="input"
                     value={messageInput}
                     onChange={(e) => setMessageInput(e.target.value)}

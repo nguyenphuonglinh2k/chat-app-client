@@ -17,6 +17,11 @@ function SignUp() {
 
     let history = useHistory();
 
+    function onKeyUp(e) {
+        if (e.charCode === 13) 
+            onClickPostSignUp()
+    }
+
     function onClickPostSignUp() {
         axios.post('http://localhost:5000/account/signup', {
             username,
@@ -67,7 +72,7 @@ function SignUp() {
                         height="34" 
                     />
                 </div>
-                <Form>
+                <Form onKeyPress={onKeyUp}>
                     <FormGroup>
                         <Label for="exampleEmail">Email</Label>
                         <Input 

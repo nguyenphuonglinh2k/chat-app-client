@@ -1,7 +1,9 @@
 .main-content .page-content {
     padding: 24px 24px;
-    height: calc(100% - 150px);
+    /* height: calc(100% - 150px); */
+    height: 100%;
     box-sizing: content-box;
+    transition: all .5s ease;
 }
 
 .main-content .page-content h4 {

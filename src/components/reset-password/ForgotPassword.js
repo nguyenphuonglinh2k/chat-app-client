@@ -12,6 +12,11 @@ function ForgotPassword() {
     const [ email, setEmail ] = useState('');
     const [invalidValue, setInvalidValue] = useState({});
 
+    function onKeyUp(e) {
+        if (e.charCode === 13)
+            onClickPostResetPassword()
+    }
+
     function onClickPostResetPassword() {
         axios.post('http://localhost:5000/account/forgot-password', {
             email
@@ -60,7 +65,7 @@ function ForgotPassword() {
                         height="34" 
                     />
                 </div>
-                <Form>
+                <Form onKeyPress={onKeyUp}>
                     <FormGroup>
                         <Label for="exampleEmail">Email</Label>
                         <Input 
