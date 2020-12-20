@@ -2,6 +2,7 @@ import React, { useState} from 'react';
 
 import { Modal, Button, Input } from 'antd';
 import axios from 'axios';
+import { useHistory } from "react-router-dom";
 
 import Toast from './Toast';
 
@@ -9,18 +10,26 @@ function AddChannelBtn(props) {
     const { setChannels, channels } = props;
     const [channelName, setChannelName] = useState('');
     const [visible, setVisible] = useState(false);
+    let history = useHistory();
 
     function handleOk() {
         axios.post(`http://localhost:5000/chat/create-channel`, {
             channelName
+        }, {
+            headers: {
+                authorization: localStorage.getItem('jwt')
+            }
         }).then((res) => {
             setVisible(() => false);
 
-            if (res.data.error)
-                return Toast.fire({
+            if (res.data.error) {
+                localStorage.clear();
+                Toast.fire({
                     icon: 'error',
                     title: res.data.error
                 });
+                return history.push('/signin');
+            }
 
             setChannels(() => [...channels, res.data.newChannel]);
             setChannelName(() => '');

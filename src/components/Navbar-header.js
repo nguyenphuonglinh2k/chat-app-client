@@ -7,6 +7,7 @@ export default function NavbarHeader(props) {
     const user = JSON.parse(localStorage.getItem('user'));
     const { setIsProfileOpen, sidebarOpen, setSidebarOpen } = props;
     const [dropdownOpen, setDropdownOpen] = useState(false);
+    
     const toggle = () => setDropdownOpen(prevState => !prevState);
 
     let history = useHistory();

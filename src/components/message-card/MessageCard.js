@@ -11,7 +11,7 @@ function MessageCard(props) {
             del.textContent = '';
         }
     });
-
+    
     return (
         <div>
             { !messages.length && 

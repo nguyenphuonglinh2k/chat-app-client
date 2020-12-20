@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './SignUp.css';
 
 function SignUp() {
-    const [invalidValue, setInvalidValue] = useState({});
+    const [ invalidValue, setInvalidValue ] = useState({});
     const [ username, setUsername ] = useState('');
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
@@ -18,8 +18,8 @@ function SignUp() {
     let history = useHistory();
 
     function onKeyUp(e) {
-        if (e.charCode === 13) 
-            onClickPostSignUp()
+        if (e.charCode === 13)
+            onClickPostSignUp();
     }
 
     function onClickPostSignUp() {
@@ -30,7 +30,7 @@ function SignUp() {
         }).then((res) => {
             setInvalidValue(() => res.data);        
 
-            if (res.data.message) {
+            if (res.data.message) { 
                 Toast.fire({
                     icon: 'success',
                     title: res.data.message

@@ -33,13 +33,12 @@ function ChatBtn(props) {
             content: messageInput,
             time: present,
             channelId,
-            user: JSON.parse(user)._id
+            user: JSON.parse(user)
         };
-
-        console.log(newMessage)
-        socket.emit("send-message", newMessage);
-
+        
         setMessages(() => [...messages, newMessage]);
+
+        socket.emit("send-message", newMessage);
 
         setMessageInput(() => '');
     }

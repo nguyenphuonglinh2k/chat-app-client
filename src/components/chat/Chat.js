@@ -3,7 +3,6 @@ import classNames from "classnames";
 import axios from 'axios';
 import socketIOClient from "socket.io-client";
 
-
 import { useHistory } from "react-router-dom";
 
 import MessageCard from '../message-card/MessageCard';
@@ -50,7 +49,7 @@ function Chat() {
             })
             .catch((err) => console.log(err));
         
-    }, [channelIdCurrent, history])
+    }, [channelIdCurrent])
 
     return (
         <div className="Chat">
