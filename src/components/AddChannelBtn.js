@@ -1,20 +1,30 @@
 import React, { useState} from 'react';
 
-import { Modal, Button, Input } from 'antd';
+import { Modal, Button, Input, Radio } from 'antd';
 import axios from 'axios';
 import { useHistory } from "react-router-dom";
 
 import Toast from './Toast';
 
 function AddChannelBtn(props) {
+    const user = JSON.parse(localStorage.getItem('user'));
+
     const { setChannels, channels } = props;
     const [channelName, setChannelName] = useState('');
     const [visible, setVisible] = useState(false);
+    const [channelType, setChannelType] = useState("public");
+
     let history = useHistory();
+
+    const onChangeChannelType = e => {
+        setChannelType(e.target.value);
+    };
 
     function handleOk() {
         axios.post(`http://localhost:5000/chat/create-channel`, {
-            channelName
+            channelName,
+            channelType,
+            adminId: user._id
         }, {
             headers: {
                 authorization: localStorage.getItem('jwt')
@@ -66,10 +76,18 @@ function AddChannelBtn(props) {
                 ]}
             >
                 <Input 
+                    className="mb-3"
                     value={channelName} 
                     onChange={(e) => setChannelName(e.target.value)}
                     placeholder="Enter channel name" 
                 />
+                <Radio.Group 
+                    onChange={onChangeChannelType} 
+                    value={channelType}
+                >
+                    <Radio defaultChecked="true" value="public">Public</Radio>
+                    <Radio value="private">Private</Radio>
+                </Radio.Group>
             </Modal>
         </span>
     );

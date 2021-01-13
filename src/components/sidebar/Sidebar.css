@@ -106,3 +106,43 @@
     background-color: #a6b0cf1f;
 }
 
+.dropdown {
+    height: 12px !important;
+    width: 10px !important;
+}
+
+.channel-ban {
+    opacity: .3;
+}
+
+.channel-ban img {
+    height: 15px !important;
+    width: 15px !important;
+    margin-right: 4px !important;
+}
+
+.openChipImg img {
+    height: 10px !important;
+    width: 8px !important;
+}
+
+.chipList {
+    display: none;
+    position: absolute;
+    right: -120px;
+    z-index: 10;
+    background: rgb(221,221,221);
+    background: linear-gradient(90deg, rgba(221,221,221,0.95) 0%, rgba(221,221,221,0.95) 100%);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.chipList > *:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.openChipImg:hover .chipList {
+    display: inline-flex;
+    flex-direction: column;
+}
+

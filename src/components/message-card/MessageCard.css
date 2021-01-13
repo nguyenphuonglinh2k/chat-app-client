@@ -1,7 +1,7 @@
 .main-content .page-content {
     padding: 24px 24px;
-    /* height: calc(100% - 150px); */
-    height: 100%;
+    height: calc(100% - 150px);
+    /* height: 100%; */
     box-sizing: content-box;
     transition: all .5s ease;
 }
@@ -39,4 +39,9 @@
  
 .non-message img {
     width: calc(100% - 40%);
+}
+
+.text-bottom img {
+    max-height: 20rem;
+    max-width: 20rem;
 }

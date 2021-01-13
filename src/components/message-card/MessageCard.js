@@ -40,8 +40,11 @@ function MessageCard(props) {
                                         <span>{ message.user.username }</span>
                                         <span>{ message.time }</span>
                                     </div>
-                                    <div className="text-bottom">
+                                    <div className="text-bottom d-flex flex-column">
                                         { message.content }
+                                        { message.upload && 
+                                            <img src={message.upload} alt="" />
+                                        }
                                     </div>
                                 </div>
                             </div>
