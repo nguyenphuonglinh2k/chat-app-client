@@ -76,17 +76,6 @@
     border-radius: 5px;
 }
 
-.main-content .page-content .message-input input {
-    border-radius: 30px;
-    background-color: white;
-    border-color: rgba(85,110,230,.1)!important;
-    padding: 20px !important;
-}
-
-.main-content .page-content .message-input input:focus {
-    background-color: rgb(232, 240, 254);
-}
-
 .main-content .page-content .message-input button {
     border-radius: 30px;
 }
