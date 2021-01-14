@@ -13,7 +13,7 @@ import "antd/dist/antd.css";
 import "./Sidebar.css";
 
 function Sidebar(props) {
-  const { sidebarOpen, setSidebarOpen, setMessages } = props;
+  const { sidebarOpen, setSidebarOpen, setMessages, channelIdCurrent, setChannelIdCurrent } = props;
   const [channels, setChannels] = useState([]);
   const [visibleAdd, setVisibleAdd] = useState(false);
   const [visibleDel, setVisibleDel] = useState(false);
@@ -21,8 +21,8 @@ function Sidebar(props) {
 
   const user = JSON.parse(localStorage.getItem('user'));
 
-  let currentChannelId =
-    localStorage.getItem("channelId") || "5f325c4598326349ea89ef84";
+  // let channelIdCurrent =
+  //   localStorage.getItem("channelId") || "5f325c4598326349ea89ef84";
   let history = useHistory();
 
   useEffect(() => {
@@ -33,6 +33,10 @@ function Sidebar(props) {
       })
       .catch((err) => console.log(err));
   }, []);
+
+  function getMessagesInGeneralChannel() {
+    
+  }
 
   function onClickAddUser(channelId) {
     setVisibleAdd(() => false);
@@ -51,7 +55,7 @@ function Sidebar(props) {
 
           Toast.fire({
             icon: "error",
-            title: res.data.error,
+            title: res.data.errorLogin,
           });
           return history.push("/signin");
         }
@@ -87,7 +91,7 @@ function Sidebar(props) {
 
           Toast.fire({
             icon: "error",
-            title: res.data.error,
+            title: res.data.errorLogin,
           });
           return history.push("/signin");
         }
@@ -119,15 +123,25 @@ function Sidebar(props) {
 
           Toast.fire({
             icon: "error",
-            title: res.data.error,
+            title: res.data.errorLogin,
           });
           return history.push("/signin");
         }
 
+        localStorage.setItem("channelId", "5f325c4598326349ea89ef84");
+        setChannelIdCurrent(() => "5f325c4598326349ea89ef84");
+
+        let e = {target: {dataset: {id: "5f325c4598326349ea89ef84", type: "public"}}};
+        onClickGetMessage(e);
+
+        Toast.fire({
+          icon: "success",
+          title: res.data.message,
+        });
+
         const element = channels.find(channel => channel._id === channelId);
-        if (element) {
+        if (typeof element === 'object') {
           const index = channels.indexOf(element);
-          console.log(index);
           setChannels(() => [
             ...channels.slice(0, index),
             ...channels.slice(index + 1)
@@ -165,6 +179,7 @@ function Sidebar(props) {
               title: res.data.error,
             });
 
+          setChannelIdCurrent(() => res.data.channelId);
           localStorage.setItem("channelId", res.data.channelId);
           setMessages(() => res.data.messages);
         })
@@ -221,13 +236,17 @@ function Sidebar(props) {
         <ul className="channels">
           <li className="d-flex justify-content-between">
             <span className="menu-title">CHANNELS</span>
-            <AddChannelBtn channels={channels} setChannels={setChannels} />
+            <AddChannelBtn 
+              channels={channels} 
+              setChannels={setChannels} 
+              setChannelIdCurrent={setChannelIdCurrent}
+            />
           </li>
           {channels.length &&
             channels.map((channel, index) => (
               <li
                 className={classNames("channel-item", {
-                  "color-focus": currentChannelId === channel._id,
+                  "color-focus": channelIdCurrent === channel._id,
                 })}
                 key={index}
                 onClick={(e) => onClickGetMessage(e)}

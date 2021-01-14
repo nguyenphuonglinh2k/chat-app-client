@@ -18,10 +18,15 @@ function Chat() {
     const [sidebarOpen, setSidebarOpen] = useState(true);
     const [messages, setMessages] = useState([]);
     const [isProfileOpen, setIsProfileOpen] = useState(false);
+    const [channelIdCurrent, setChannelIdCurrent] = useState(
+        localStorage.getItem('channelId') ?
+        localStorage.getItem('channelId') :
+        '5f325c4598326349ea89ef84'
+    );
 
     const socket = socketIOClient('http://localhost:5000');
 
-    let channelIdCurrent = localStorage.getItem('channelId') || '5f325c4598326349ea89ef84';
+    // let channelIdCurrent = localStorage.getItem('channelId') || '5f325c4598326349ea89ef84';
     let history = useHistory();
 
     socket.on("message-res", function(data) {
@@ -49,7 +54,7 @@ function Chat() {
             })
             .catch((err) => console.log(err));
         
-    }, [channelIdCurrent, history])
+    }, [])
 
     return (
         <div className="Chat">
@@ -57,6 +62,8 @@ function Chat() {
                 sidebarOpen={sidebarOpen} 
                 setSidebarOpen={setSidebarOpen} 
                 setMessages={setMessages}
+                channelIdCurrent={channelIdCurrent}
+                setChannelIdCurrent={setChannelIdCurrent}
             />
 
             <div className={classNames('main-content', 'w-100', 'h-100', {'padding-none': !sidebarOpen})}>

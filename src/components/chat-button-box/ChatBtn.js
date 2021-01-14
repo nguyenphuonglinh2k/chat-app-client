@@ -25,11 +25,13 @@ function ChatBtn(props) {
     };
 
     function onKeyUp(e) {
-        if (e.charCode === 13) 
+        if (e.charCode === 13) {
+            e.preventDefault();
             onClickPostMessages();
+        }     
     }
 
-    function onClickPostMessages(e) {
+    function onClickPostMessages() {
         let formData = new FormData();
 
         formData.append("file", upload);

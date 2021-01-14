@@ -89,3 +89,9 @@
 .chat-content {
     flex-grow: 1;
 }
+
+.page-topbar .dropdown>*:first-child {
+    position: relative;
+    top: -13px;
+    right: 20px;
+}

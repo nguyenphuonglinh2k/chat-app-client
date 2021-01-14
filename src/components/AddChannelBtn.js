@@ -9,7 +9,7 @@ import Toast from './Toast';
 function AddChannelBtn(props) {
     const user = JSON.parse(localStorage.getItem('user'));
 
-    const { setChannels, channels } = props;
+    const { setChannels, channels, setChannelIdCurrent } = props;
     const [channelName, setChannelName] = useState('');
     const [visible, setVisible] = useState(false);
     const [channelType, setChannelType] = useState("public");
@@ -49,7 +49,7 @@ function AddChannelBtn(props) {
 
             setChannels(() => [...channels, res.data.newChannel]);
             setChannelName(() => '');
-            
+
             return Toast.fire({
                 icon: 'success',
                 title: res.data.message
