@@ -49,11 +49,18 @@ export default function Profile(props) {
                     }
                 })
                 .then(function (response) {
+                    if (response.data.errorLogin)
+                        return  Toast.fire({
+                            icon: 'error',
+                            title: response.data.errorLogin
+                        });
+
                     if (response.data.error)
                         return Toast.fire({
                             icon: 'error',
                             title: response.data.error
                         });
+                        
                     Toast.fire({
                         icon: 'success',
                         title: response.data.message

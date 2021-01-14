@@ -35,11 +35,11 @@ function Chat() {
             }
         })
             .then((res) => {
-                if (res.data.error) {
+                if (res.data.errorLogin) {
                     localStorage.clear();
                     Toast.fire({
                         icon: 'error',
-                        title: res.data.error
+                        title: res.data.errorLogin
                     });
                     return history.push('/signin');
                 }

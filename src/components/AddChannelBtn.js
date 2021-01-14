@@ -32,14 +32,20 @@ function AddChannelBtn(props) {
         }).then((res) => {
             setVisible(() => false);
 
-            if (res.data.error) {
+            if (res.data.errorLogin) {
                 localStorage.clear();
                 Toast.fire({
                     icon: 'error',
-                    title: res.data.error
+                    title: res.data.errorLogin
                 });
                 return history.push('/signin');
             }
+
+            if (res.data.error)
+                return Toast.fire({
+                    icon: "error",
+                    title: res.data.error,
+                });
 
             setChannels(() => [...channels, res.data.newChannel]);
             setChannelName(() => '');

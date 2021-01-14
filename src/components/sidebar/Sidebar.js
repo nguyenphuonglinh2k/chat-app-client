@@ -149,15 +149,21 @@ function Sidebar(props) {
           },
         })
         .then((res) => {
-          if (res.data.error) {
+          if (res.data.errorLogin) {
             localStorage.clear();
 
             Toast.fire({
               icon: "error",
-              title: res.data.error,
+              title: res.data.errorLogin,
             });
             return history.push("/signin");
           }
+
+          if (res.data.error)
+            return Toast.fire({
+              icon: "error",
+              title: res.data.error,
+            });
 
           localStorage.setItem("channelId", res.data.channelId);
           setMessages(() => res.data.messages);
